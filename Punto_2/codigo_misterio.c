@@ -1,33 +1,33 @@
 #include <stdio.h>
 
-void f_alpha(int *p) {
-    int temp = *p;
-    int rev = 0;
-    while (temp > 0) {
-        rev = (rev * 10) + (temp % 10);
-        temp = temp / 10;
+void InvertirNumero(int *p) { //En esta funcion se invierte el numero ingresado
+    int copia = *p; //Se crea una copia del numero ingresado
+    int invertido = 0; //Se crea la variable que almacenará el numero invertido
+    while (copia > 0) { //Mientras la copia del numero ingresado sea mayor a cero.
+        invertido = (invertido * 10) + (copia % 10); //Se multiplica el numero invertido por 10 y se le suma el resto de dividir el numero ingresado en 10
+        copia = copia / 10; //Se divide la copia del numero ingresado en 10
     }
-    *p = rev;
+    *p = invertido; //Al numero ingresado se lo reemplaza por el numero invertido
 }
 
-void f_beta(int *p) {
-    *p = *p / 2;
+void DividirEnDos(int *p) { //Esta funcion divide el numero ingresado en 2
+    *p = *p / 2; //Se divide el numero ingresado en 2
 }
 
-void f_gamma(int *p) {
-    int temp = *p;
-    int suma = 0;
-    while (temp > 0) {
-        suma = suma + (temp % 10);
-        temp = temp / 10;
+void SumarResto(int *p) { //En esta funcion, al numero ingresado se le suman los restos de dividirlo en 10, mientras el numero sea mayor a 0
+    int copia = *p; //Se crea una copia del numero ingresado
+    int suma = 0; //Se crea la variable que almacenará la suma de los restos de dividir el numero ingresado en 10
+    while (copia > 0) { //Mientras la copia del numero ingresado sea mayor a cero.
+        suma = suma + (copia % 10); //Se suma a la variable suma el resto de dividir la copia del numero ingresado en 10
+        copia = copia / 10; //Se divide la copia del numero ingresado en 10
     }
-    *p = *p + suma;
+    *p = *p + suma; //Al numero ingresado se le suma la suma total de dividir el numero ingresado en 10
 }
 
 void procesar_enigma(int *valor_referencia) {
-    f_alpha(valor_referencia);
-    f_beta(valor_referencia);
-    f_gamma(valor_referencia);
+    InvertirNumero(valor_referencia); //En esta funcion se invierte el numero ingresado.
+    DividirEnDos(valor_referencia); //Esta funcion divide el numero invertido en 2.
+    SumarResto(valor_referencia); //En esta funcion, al numero ingresado se le suman los restos de dividirlo en 10
 }
 
 int main() {
