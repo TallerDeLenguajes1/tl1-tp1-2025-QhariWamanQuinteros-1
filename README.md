@@ -18,3 +18,6 @@ El codigo invoca en su funcion principal a una funcion que procesa un dato de en
 #### codigo_sin_funcionar
 El programa presentaba errores de sintaxis (falta de punto y coma, falta de inclusion de libreria stdio.h, falta de operador (&) de direccion)
 El programa hacia uso de una funcion haciendo pasaje de parametro por valor, eso hacía que al evocar su resultado, este no cambiase. Lo que hice fue cambiar el pasaje por valor a pasaje por referencia. Y ahora cuando se invoca la funcion se le pasa la direccion de memoria de la variable.
+
+##### sobre ejercicio tp1_1.c
+Lo que almacena el puntero es la direccion de memoria de la variable (por eso pletra = &letra. En cambio, en el punto 4 lo que se muestra es la direccion de memoria de pletra, en esa direccion de memoria se encuentra almacenada la direccion de memoria de la variable.)
